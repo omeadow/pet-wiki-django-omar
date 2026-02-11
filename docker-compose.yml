@@ -3,10 +3,10 @@ version: "3.9"
 services:
   web:
     build: .
-#    command: python /unnamed-project/manage.py runserver 0.0.0.0:8000
-    command: gunicorn unnamed_project.wsgi -b 0.0.0.0:8000
+#    command: python /wiki-website/manage.py runserver 0.0.0.0:8000
+    command: gunicorn wiki-website.wsgi -b 0.0.0.0:8000
     volumes:
-      - .:/unnamed-project
+      - .:/wiki-website
     ports:
       - "8000:8000"
     depends_on:
